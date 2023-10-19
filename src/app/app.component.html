@@ -1,35 +1,42 @@
 <div class="container">
   <form [formGroup]="registrationForm" class="row g-3" (ngSubmit)="registrationUser()">
+
     <div class="col-md-6">
       <label for="name" class="form-label">name</label>
       <input type="text" class="form-control" id="name" formControlName="name" required>
-      <span style="color: red;" *ngIf="name && name.invalid && name.touched">this input is filed</span>
-      <!-- <span style="color: red;" *ngIf="controll('name') ">this input is filed</span> -->
+      <!-- <span style="color: red;" *ngIf="name && name.invalid && name.touched">this input is filed</span> -->
+      <span style="color: red;" *ngIf="controll('name')">this input is filed</span>
     </div>
+    
     <div class="col-md-6">
       <label for="inputPassword4" class="form-label">Password</label>
       <input type="password" class="form-control" id="inputPassword4" formControlName="password" required>
-      <span style="color: red;" *ngIf="password && password.invalid && password.touched">this input is filed</span>
+      <!-- <span style="color: red;" *ngIf="password && password.invalid && password.touched">this input is filed</span> -->
+      <span style="color: red;" *ngIf="controll('password')">this input is filed</span>
     </div>
     <div class="col-md-6">
       <label for="inputEmail4" class="form-label">Email</label>
       <input type="email" class="form-control" id="inputEmail4" formControlName="useremail" required>
-      <span style="color: red;" *ngIf="useremail && useremail.invalid && useremail.touched">this input is filed</span> 
+      <!-- <span style="color: red;" *ngIf="useremail && useremail.invalid && useremail.touched">this input is filed</span>  -->
+      <span style="color: red;" *ngIf="controll('useremail')">this input is filed</span>
     </div> 
     <div class="col-md-6">
       <label for="inputPassword5" class="form-label">Cunfurm Password</label>
       <input type="password" class="form-control" id="inputPassword5" formControlName="CunfurmPassword"  required>
-      <span style="color: red;" *ngIf="CunfurmPassword && CunfurmPassword.invalid && CunfurmPassword.touched">this input is filed</span>
+      <!-- <span style="color: red;" *ngIf="CunfurmPassword && CunfurmPassword.invalid && CunfurmPassword.touched">this input is filed</span> -->
+      <span style="color: red;" *ngIf="controll('CunfurmPassword')">this input is filed</span>
     </div> 
     <div class="col-md-6">
       <label for="inputPassword6" class="form-label">age</label>
       <input type="number" class="form-control" id="inputPassword6" formControlName="age" required>
-      <span style="color: red;" *ngIf="age && age.invalid && age.touched">this input is filed</span>
+      <!-- <span style="color: red;" *ngIf="age && age.invalid && age.touched">this input is filed</span> -->
+      <span style="color: red;" *ngIf="controll('age')">this input is filed</span>
     </div> 
     <div class="col-md-6">
       <label for="inputPassword7" class="form-label">mobile no.</label>
       <input type="number" class="form-control" id="inputPassword7" formControlName="mobile" required> 
-      <span style="color: red;" *ngIf="mobile && mobile.invalid && mobile.touched ">this input is filed</span>
+      <!-- <span style="color: red;" *ngIf="mobile && mobile.invalid && mobile.touched ">this input is filed</span> -->
+      <span style="color: red;" *ngIf="controll('mobile')">this input is filed</span>
     </div> 
 
     <div class="col-12">

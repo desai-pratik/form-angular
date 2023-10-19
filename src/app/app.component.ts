@@ -12,8 +12,7 @@ export class AppComponent {
   letterpatturn = /^[a-z,A-Z]/ ;
   emailvalidatin =  /^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/;
 
-  registrationForm = new FormGroup ({
-
+  registrationForm = new FormGroup ({ 
     name : new FormControl('', [Validators.required , Validators.pattern(this.letterpatturn) ]),
     // useremail : new FormControl('', [Validators.required , Validators.email]),
     useremail : new FormControl('', [Validators.required , Validators.pattern(this.emailvalidatin)]),
@@ -25,29 +24,29 @@ export class AppComponent {
 
   registrationUser(){
    console.log(this.registrationForm.value); 
-  }
-   
+  } 
+   controll(www:string){
+    return this.registrationForm.get(www) &&
+    this.registrationForm.get(www)?.invalid &&
+    this.registrationForm.get(www)?.touched
+  } 
 
-  //  controll(www:any){
-  //   return this.registrationForm.get(www)
+  // get useremail() {
+  //   return this.registrationForm.get('useremail')
+  // } 
+  // get name() {
+  //   return this.registrationForm.get('name')
   // }
-
-  get useremail() {
-    return this.registrationForm.get('useremail')
-  }
-  get name() {
-    return this.registrationForm.get('name')
-  }
-  get password() {
-    return this.registrationForm.get('password')
-  }
-  get CunfurmPassword() {
-    return this.registrationForm.get('CunfurmPassword')
-  }
-  get age() {
-    return this.registrationForm.get('age')
-  }
-  get mobile() {
-    return this.registrationForm.get('mobile')
-  }
+  // get password() {
+  //   return this.registrationForm.get('password')
+  // }
+  // get CunfurmPassword() {
+  //   return this.registrationForm.get('CunfurmPassword')
+  // }
+  // get age() {
+  //   return this.registrationForm.get('age')
+  // }
+  // get mobile() {
+  //   return this.registrationForm.get('mobile')
+  // }
 }
