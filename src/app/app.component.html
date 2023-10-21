@@ -1,50 +1,55 @@
-<div class="container">
-  <form [formGroup]="registrationForm" class="row g-3" (ngSubmit)="registrationUser()">
+<div class="body bg-dark text-white">
+<app-home [message]="data"></app-home> 
 
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+<div class="container p-5 mt-5 "> 
+  <form [formGroup]="registrationForm" class="row g-3" (ngSubmit)="registrationUser()">
     <div class="col-md-6">
-      <label for="name" class="form-label">name</label>
-      <input type="text" class="form-control" id="name" formControlName="name" required>
-      <!-- <span style="color: red;" *ngIf="name && name.invalid && name.touched">this input is filed</span> -->
-      <span style="color: red;" *ngIf="controll('name')">this input is filed</span>
-    </div>
-    
-    <div class="col-md-6">
-      <label for="inputPassword4" class="form-label">Password</label>
-      <input type="password" class="form-control" id="inputPassword4" formControlName="password" required>
-      <!-- <span style="color: red;" *ngIf="password && password.invalid && password.touched">this input is filed</span> -->
-      <span style="color: red;" *ngIf="controll('password')">this input is filed</span>
+      <label for="name" class="form-label">First Name</label>
+      <input type="text" class="form-control" id="name" formControlName="name" required>  
+      <span *ngIf="controll('name')">this input is filed</span> 
     </div>
     <div class="col-md-6">
       <label for="inputEmail4" class="form-label">Email</label>
       <input type="email" class="form-control" id="inputEmail4" formControlName="useremail" required>
-      <!-- <span style="color: red;" *ngIf="useremail && useremail.invalid && useremail.touched">this input is filed</span>  -->
-      <span style="color: red;" *ngIf="controll('useremail')">this input is filed</span>
+      <span *ngIf="controll('useremail')">this input is filed</span>
+    </div>
+    
+    <div class="col-md-6 position-relative">
+      <label for="inputPassword4" class="form-label">Password</label>
+      <input [type]="password" class="form-control" id="inputPassword4" formControlName="password" required > 
+      <span  class="eye" (click)="onClick()">
+        <i class="fa fa-eye" aria-hidden="true" *ngIf="!show"></i>
+        <i class="fa fa-eye-slash" aria-hidden="true" *ngIf="show"></i>
+      </span> 
+      <span *ngIf="controll('password')">this input is filed</span>
     </div> 
-    <div class="col-md-6">
-      <label for="inputPassword5" class="form-label">Cunfurm Password</label>
-      <input type="password" class="form-control" id="inputPassword5" formControlName="CunfurmPassword"  required>
-      <!-- <span style="color: red;" *ngIf="CunfurmPassword && CunfurmPassword.invalid && CunfurmPassword.touched">this input is filed</span> -->
-      <span style="color: red;" *ngIf="controll('CunfurmPassword')">this input is filed</span>
-    </div> 
+    <div class="col-md-6 position-relative">
+      <label for="inputPassword5" class="form-label">Confirm Password</label>
+      <input [type]="Confpassword" class="form-control" id="inputPassword5" formControlName="CunfurmPassword" required> 
+      <span  class="eye" (click)="aaa()">
+        <i class="fa fa-eye" aria-hidden="true" *ngIf="!Confshow"></i>
+        <i class="fa fa-eye-slash" aria-hidden="true" *ngIf="Confshow"></i>
+      </span> 
+      <span *ngIf="!passwordsDoNotMatch() || controll('confirmPassword')">Passwords do not match</span>
+      <span *ngIf="">This input is required</span>
+    </div>
     <div class="col-md-6">
       <label for="inputPassword6" class="form-label">age</label>
       <input type="number" class="form-control" id="inputPassword6" formControlName="age" required>
-      <!-- <span style="color: red;" *ngIf="age && age.invalid && age.touched">this input is filed</span> -->
-      <span style="color: red;" *ngIf="controll('age')">this input is filed</span>
+      <span *ngIf="controll('age')">this input is filed</span>
     </div> 
     <div class="col-md-6">
       <label for="inputPassword7" class="form-label">mobile no.</label>
-      <input type="number" class="form-control" id="inputPassword7" formControlName="mobile" required> 
-      <!-- <span style="color: red;" *ngIf="mobile && mobile.invalid && mobile.touched ">this input is filed</span> -->
-      <span style="color: red;" *ngIf="controll('mobile')">this input is filed</span>
+      <input type="number" class="form-control" id="inputPassword7" formControlName="mobile" required>
+      <span *ngIf="controll('mobile')">this input is filed</span>
     </div> 
-
     <div class="col-12">
-      <button type="submit" [disabled]="registrationForm.invalid" class="btn btn-primary">Registration</button>
+      <button type="submit" [disabled]="registrationForm.invalid" class="btn btn-outline-success">Registration</button>
     </div>
   </form>
 </div>
-
-
-
-<router-outlet></router-outlet>
+</div>
+ 
+ 

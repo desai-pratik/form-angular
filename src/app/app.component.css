@@ -1,0 +1,13 @@
+span {
+    color: red;
+}
+.eye {
+    position: absolute;
+    font-size: 20px;
+    top: 35px; 
+    right: 20px;
+    color: gray; 
+}
+/* .body {
+    background-color: rgb(31, 31, 31);
+} */
